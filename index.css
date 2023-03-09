@@ -1,0 +1,100 @@
+body {
+  font-size: 40px;
+  text-align: center;
+}
+section {
+  height: 350px;
+  width: 450px;
+  position: relative;
+  margin-left: 30%;
+  overflow-y: hidden;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  position: absolute;
+  top: -350px;
+}
+#wrapper.smooth-transition {
+  transition: top 0.4s ease-out;
+}
+.slide {
+  height: 350px;
+  width: 450px;
+  text-align: center;
+}
+.slide p {
+  text-align: center;
+  display: block;
+  margin-top: 33%;
+}
+.slide:nth-child(1),
+.slide:nth-child(5) {
+  background-color: grey;
+}
+.slide:nth-child(2),
+.slide:nth-child(6) {
+  background-color: green;
+}
+.slide:nth-child(3) {
+  background-color: purple;
+}
+.slide:nth-child(4) {
+  background-color: salmon;
+}
+.btn {
+  position: absolute;
+  left: 50%;
+  font-size: 30px;
+  text-align: center;
+  margin-left: calc(-30px / 4);
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: bolder;
+  cursor: pointer;
+  transform: rotate(270deg);
+}
+.btn:hover {
+  font-size: 32px;
+  color: white;
+}
+#prev {
+  bottom: 5px;
+}
+#next {
+  top: 5px;
+}
+.indicators {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0px;
+  width: 5%;
+}
+.indicator {
+  cursor: pointer;
+  height: 5px;
+  width: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: block;
+  margin: 12px 5px;
+  transition: background-color 0.6s ease;
+}
+.indicator:hover,
+.indicator.active {
+  background-color: white;
+  transform: scale(1.5);
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
